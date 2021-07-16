@@ -1,13 +1,163 @@
-body {
+body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.top-pane{
+  background-color: hsl(225, 6%, 25%);
 }
+
+.pane{
+  height: 50vh;
+  display: flex;
+
+}
+
+/* sidebar */
+
+/* The sidebar menu */
+.sidenav {
+  height: 47vh; /* Full-height: remove this if you want "auto" height */
+  width: 20%; /* Set the width of the sidebar */
+ /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 0%; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* end of sidebar */
+
+.editor-container{
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  background-color: hsl(225, 6%, 25%);
+
+}
+
+.editor-title{
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(225, 6%, 13%);
+  color: white;
+  padding: .5rem .5rem .5rem 1rem;
+  border-top-right-radius: .5rem;
+  border-top-left-radius: .5rem;
+}
+
+.CodeMirror{
+  height: 100% !important;
+}
+
+.code-mirror-wrapper{
+  flex-grow: 1;
+  border-bottom-right-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+  overflow: hidden;
+}
+
+.editor-container.collapsed .CodeMirror-scroll{
+  position: absolute;
+  overflow: hidden !important;
+} 
+.editor-container.collapsed{
+  flex-grow:0;
+  overflow : visible;
+} 
+
+.center{
+  margin-top: 15px;
+  margin-bottom: 15px;
+	margin-left: 40%;
+}
+
+input[type="checkbox"]{
+	position: relative;
+	width: 120px;
+	height: 40px;
+	-webkit-appearance: none;
+	background: linear-gradient(0deg, #333, #000);
+	border-radius: 20px;
+	box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0,0,0,1), 0 5px 20px rgba(0,0,0,.5)
+	,inset 0 0 15px rgba(0,0,0,.2);
+}
+
+input:checked[type="checkbox"]{
+	background: linear-gradient(0deg, #6dd1ff, #20b7ff);
+}
+
+
+input[type="checkbox"]::before{
+	content: '';
+	position: absolute;
+	width: 80px;
+	height: 40px;
+	background: linear-gradient(0deg, #000, #6b6b6b);
+	border-radius: 20px;
+	box-shadow: 0 0 0 1px #232323;
+	transform: scale(.98, .96);
+	transition: .5s;
+}
+
+input:checked[type="checkbox"]::before{ /*if the input is check then changed the before property*/
+	left: 40px;
+
+}
+
+
+input[type="checkbox"]::after{
+	content: '';
+	position: absolute;
+	top: calc(50% - 2px);
+	left: 70px;
+	width: 4px;
+	height: 4px;
+	background: linear-gradient(0deg,#6b6b6b,  #000);
+	border-radius: 50%;
+	
+}
+
+input:checked[type="checkbox"]::after{ /*if the input is check then changed the before property*/
+	left: 105px;
+	background: #63cdff;
+	box-shadow: 0 0 5px #13b3ff, 0 0 15px #13b3ff;
+}
+
+
+
+
