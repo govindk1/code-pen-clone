@@ -5,6 +5,7 @@ import Maincomp from './Maincomp'
 
 
 ReactDOM.render(
+  //Loading the Main component on the root of HTML div
   <Maincomp />,
   document.getElementById('root')
 );

@@ -1,5 +1,6 @@
 import React from 'react'
 
+//loading code on iframe for live view
 function Bottompane(props) {
     return (
         <iframe 

@@ -1,8 +1,10 @@
 import {React, useState, useEffect} from 'react'
 
 
+
 const PREFIX = 'codepen-clone'
 
+//This function is used for saving our html, css, js content on local storage
 function useLocalStorage(key, initialValue) {
 
     const prefixedKey = PREFIX + key
@@ -19,6 +21,7 @@ function useLocalStorage(key, initialValue) {
     })
 
     useEffect(() => {
+        //It will initiate the 3 key each key will save html, css, js content respectively 
         localStorage.setItem(prefixedKey, JSON.stringify(value))
     }, [prefixedKey, value])
 

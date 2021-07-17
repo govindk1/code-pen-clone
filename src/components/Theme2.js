@@ -19,6 +19,7 @@ function App() {
     const [viewpage, setViewpage] = useState({html:'visible', css:'hidden', js:'hidden'})
 
    useEffect(() => {
+    //Combining html, css, js content and putting on bottom pane which serve as live view
     const timeout = setTimeout(() => {
       setSrcDoc(`
         <html>
@@ -30,6 +31,7 @@ function App() {
     }, 250)
 
     return () => clearTimeout(timeout)
+    //whenever our html, css, js content it will re-render bottom-pane
   }, [html, css, js])
 
   return (
@@ -42,19 +44,20 @@ function App() {
         {/*<!-- Side navigation -->*/}
         <div className="sidenav">
             <div style={{display:"flex", justifyContent:"space-between"}}>
-            <a  onClick={() => setViewpage({html:'visible', css:'hidden', js:'hidden'})}>index.html</a>
+            <a  onClick={() => setViewpage({html:'visible', css:'hidden', js:'hidden', cursor:'pointer'})}>index.html</a>
             </div>
 
             <div style={{display:"flex", justifyContent:"space-between"}}>
-            <a  onClick={() => setViewpage({html:'hidden', css:'visible', js:'hidden'})}>index.css</a>
+            <a  onClick={() => setViewpage({html:'hidden', css:'visible', js:'hidden', cursor:'pointer'})}>index.css</a>
             </div>
 
             <div style={{display:"flex", justifyContent:"space-between"}}>
-            <a  onClick={() => setViewpage({html:'hidden', css:'hidden', js:'visible'})}>index.js</a>
+            <a  onClick={() => setViewpage({html:'hidden', css:'hidden', js:'visible', cursor:'pointer'})}>index.js</a>
             </div>
         </div>
 
         <div className="main pane">
+            {/*passing props to the component*/}
             <Editor 
             photo = {Xml}
             language="xml" 

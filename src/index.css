@@ -49,7 +49,7 @@ body{
   overflow: hidden;
 }
 
-
+/* Making mobile responsive */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -88,14 +88,6 @@ body{
   overflow: hidden;
 }
 
-.editor-container.collapsed .CodeMirror-scroll{
-  position: absolute;
-  overflow: hidden !important;
-} 
-.editor-container.collapsed{
-  flex-grow:0;
-  overflow : visible;
-} 
 
 .center{
   margin-top: 10px;
@@ -105,6 +97,7 @@ body{
   
 }
 
+/*Styling for switching the theme using css */
 input[type="checkbox"]{
   cursor: pointer;
 	position: relative;
@@ -134,7 +127,8 @@ input[type="checkbox"]::before{
 	transition: .5s;
 }
 
-input:checked[type="checkbox"]::before{ /*if the input is check then changed the before property*/
+/*if the input is check then changed the before property*/
+input:checked[type="checkbox"]::before{ 
 	left: 40px;
 
 }
@@ -152,7 +146,8 @@ input[type="checkbox"]::after{
 	
 }
 
-input:checked[type="checkbox"]::after{ /*if the input is check then changed the before property*/
+ /*if the input is check then changed the before property*/
+input:checked[type="checkbox"]::after{
 	left: 105px;
 	background: #63cdff;
 	box-shadow: 0 0 5px #13b3ff, 0 0 15px #13b3ff;

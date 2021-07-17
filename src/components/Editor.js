@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
 
@@ -19,6 +19,7 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 
 function Editor(props) {
 
+    //destructuring the props value
     const {
         language,
         displayName,
@@ -26,11 +27,12 @@ function Editor(props) {
         onChange
       } = props
 
-    const [open, setOpen] = useState(true) 
+
     function handleChange(editor, data, value){
         onChange(value)
     }
 
+    //downloading file
     function download(filename, text) {
         var element = document.createElement('a');
         element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -53,6 +55,7 @@ function Editor(props) {
         k1 = null
       }
       
+      //checking for which file format and content we have to download
       if(k === "xml" || k1 ==="xml")
         download("index.html", JSON.parse(localStorage.getItem('codepen-clonehtml')).replace(/^"(.*)"$/, '$1'));
         
@@ -65,12 +68,9 @@ function Editor(props) {
     
     }
 
-    
-
-
-
+    //Editor
     return props.show === "hidden" ?  (<h1></h1>) : (
-        <div className = {`editor-container ${open ? '' : 'collapsed'}`} style={{visibility:props.show}}>
+        <div className = {"editor-container"} style={{visibility:props.show}}>
             <div className = "editor-title" id={language}   >
                 <img src={props.photo} style={{height:"30px", width:"35px", borderRadius: "40%"}} alt=""></img>
                 {displayName}

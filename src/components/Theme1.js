@@ -20,6 +20,7 @@ function App() {
   const [srcDoc, setSrcDoc] = useState('')
 
   useEffect(() => {
+    //Combining html, css, js content and putting on bottom pane which serve as live view
     const timeout = setTimeout(() => {
       setSrcDoc(`
         <html>
@@ -28,6 +29,7 @@ function App() {
           <script>${js}</script>
         </html>
       `)
+       //whenever our html, css, js content it will re-render bottom-pane
     }, 250)
 
     return () => clearTimeout(timeout)
