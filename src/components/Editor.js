@@ -11,8 +11,11 @@ import 'codemirror/mode/javascript/javascript'
 //syntax highlighting for CSS
 import 'codemirror/mode/css/css'
 
+
 import {Controlled as ControlledEditor} from 'react-codemirror2'
 import GetAppIcon from '@material-ui/icons/GetApp';
+
+
 
 function Editor(props) {
 
@@ -63,20 +66,15 @@ function Editor(props) {
     }
 
     
-    function addColor(e) {
-      e.target.style.color = '#63cdff';
-    } 
-    function removeColor(e) {
-      e.target.style.color = 'white';
-    }
 
-    
+
 
     return props.show === "hidden" ?  (<h1></h1>) : (
         <div className = {`editor-container ${open ? '' : 'collapsed'}`} style={{visibility:props.show}}>
             <div className = "editor-title" id={language}   >
+                <img src={props.photo} style={{height:"30px", width:"35px", borderRadius: "40%"}} alt=""></img>
                 {displayName}
-                <GetAppIcon className={language} onMouseEnter={addColor} onMouseLeave={removeColor} style={{color:"white", marginTop:"7px"}} onClick={downloadFile}/>
+                <GetAppIcon className={language}  style={{color:"white", marginTop:"7px", cursor:"pointer"}} onClick={downloadFile}/>
             </div>
             <ControlledEditor 
                 onBeforeChange={handleChange}

@@ -4,6 +4,12 @@ import useLocalStorage from '../hooks/useLocalStorage'
 import Bottompane from "./Bottompane"
 import axios from "axios"
 
+
+//importing images
+import Xml from "../images/Xml.png" 
+import Css from "../images/Css.png"
+import Javascript from "../images/Javascript.jpg"
+
 function App() {
 
 
@@ -31,18 +37,21 @@ function App() {
     <>
       <div className="pane top-pane">
         <Editor
+          photo = {Xml}
           language="xml"
           displayName="HTML"
           value={html}
           onChange={setHtml}
         />
         <Editor
+          photo = {Css}
           language="css"
           displayName="CSS"
           value={css}
           onChange={setCss}
         />
         <Editor
+          photo = {Javascript}
           language="javascript"
           displayName="JS"
           value={js}

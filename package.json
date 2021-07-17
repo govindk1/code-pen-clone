@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "codemirror": "^5.62.0",
+    "gh-pages": "^3.2.3",
     "pastebin": "0.0.1",
     "pastebin-api": "^2.2.0",
     "pastebin-js": "^1.0.6",

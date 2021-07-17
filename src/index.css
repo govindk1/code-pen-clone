@@ -16,14 +16,13 @@ body{
 
 /* The sidebar menu */
 .sidenav {
-  height: 47vh; /* Full-height: remove this if you want "auto" height */
-  width: 20%; /* Set the width of the sidebar */
- /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 47vh; 
+  width: 20%; 
+  z-index: 1;
+  top: 0; 
   left: 0;
-  background-color: #111; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: #111; 
+  overflow-x: hidden;
   padding-top: 20px;
 }
 
@@ -43,7 +42,7 @@ body{
 
 /* Style page content */
 .main {
-  margin-left: 0%; /* Same as the width of the sidebar */
+  margin-left: 0%; 
   padding: 0px 10px;
   height: 50vh;
   width: 100%;
@@ -51,8 +50,6 @@ body{
 }
 
 
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -109,6 +106,7 @@ body{
 }
 
 input[type="checkbox"]{
+  cursor: pointer;
 	position: relative;
 	width: 120px;
 	height: 40px;

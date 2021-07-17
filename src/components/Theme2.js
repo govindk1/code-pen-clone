@@ -2,7 +2,12 @@ import React, {useState, useEffect} from "react"
 import Editor from "../components/Editor"
 import useLocalStorage from '../hooks/useLocalStorage'
 import Bottompane from "./Bottompane"
-import GetAppIcon from '@material-ui/icons/GetApp';
+
+
+//importing images
+import Xml from "../images/Xml.png" 
+import Css from "../images/Css.png"
+import Javascript from "../images/Javascript.jpg"
 
 function App() {
 
@@ -27,40 +32,6 @@ function App() {
     return () => clearTimeout(timeout)
   }, [html, css, js])
 
-
-  function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-  
-    element.style.display = 'none';
-    document.body.appendChild(element);
-  
-    element.click();
-  
-    document.body.removeChild(element);
-  }
-
-  const downloadHtmlFile = (e) => {
-  e.target.color="blue"
-  download("index.html", JSON.parse(localStorage.getItem('codepen-clonehtml')).replace(/^"(.*)"$/, '$1'));
-
-}
-
-const downloadCssFile = () => {
-    download("index.css", JSON.parse(localStorage.getItem('codepen-clonecss')).replace(/^"(.*)"$/, '$1'));
-}
-
-const downloadJsFile = () => {
-    download("index.js", JSON.parse(localStorage.getItem('codepen-clonejs')).replace(/^"(.*)"$/, '$1'));
-}
-
-function addColor(e) {
-  e.target.style.color = '#63cdff';
-} 
-function removeColor(e) {
-  e.target.style.color = 'white';
-}
   return (
     <React.Fragment>
     {/* Top section */}
@@ -85,6 +56,7 @@ function removeColor(e) {
 
         <div className="main pane">
             <Editor 
+            photo = {Xml}
             language="xml" 
             displayName="HTML" 
             show = {viewpage.html}
@@ -92,6 +64,7 @@ function removeColor(e) {
             onChange={setHtml}/>
 
             <Editor 
+                photo = {Css}
                 language="css" 
                 displayName="CSS" 
                 show = {viewpage.css}
@@ -99,7 +72,7 @@ function removeColor(e) {
                 onChange={setCss}
             />
             <Editor 
-
+                photo = {Javascript}
                 language="javascript" 
                 displayName="JS" 
                 show = {viewpage.js}
