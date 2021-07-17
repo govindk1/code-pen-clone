@@ -101,9 +101,11 @@ body{
 } 
 
 .center{
-  margin-top: 15px;
-  margin-bottom: 15px;
-	margin-left: 40%;
+  margin-top: 10px;
+  margin-bottom: 7px;
+	margin-left: 45%;
+  display: flex;
+  
 }
 
 input[type="checkbox"]{
@@ -157,6 +159,8 @@ input:checked[type="checkbox"]::after{ /*if the input is check then changed the 
 	background: #63cdff;
 	box-shadow: 0 0 5px #13b3ff, 0 0 15px #13b3ff;
 }
+
+
 
 
 
